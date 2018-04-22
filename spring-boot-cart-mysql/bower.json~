@@ -1,0 +1,10 @@
+{
+    "name": "spring-boot-cart-mysql",
+    "version": "0.1",
+    "dependencies": {
+        "backbone": "latest"
+    },
+    "install": {
+        "path": "/src/main/resources/static"
+    }
+}
