@@ -22,11 +22,11 @@ public class OrdersServiceImpl implements OrdersService{
 
     @Override
     public List<Orders> listOrders() {
-        return null;
+        return ordersDaoController.listOrders();
     }
 
     @Override
     public List<OrdersBarang> listOrdersBarang() {
-        return null;
+        return ordersDaoController.listOrdersBarang();
     }
 }
