@@ -1,0 +1,80 @@
+<!--update
+<div class="modal fade" tabindex="-1" aria-hidden="true" id="openEditCart">
+    <div class="modal-dialog" role="dialog">
+        <div class="modal-content" role="document">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">
+                    <span aria-hidden="true">Close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-lg-5">
+                            <input type="hidden" ng-model="shopping['idshopping']">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Quantity:</label>
+                        <div class="col-lg-5">
+                            <input type="number" class="form-control" ng-model="shopping['stock']">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="EditCart()">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                    Update
+                </button>
+                <button class="btn btn-danger" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="page-header">
+                <h3>Your Cart</h3>
+            </div>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Buku</th>
+                        <th>Amount</th>
+                        <th>Quantity</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cart in shoppingCart">
+                        <td>{{$index + 1}}</td>
+                        <td>{{cart.barang.name}}</td>
+                        <td>{{cart.amout | currency:"Rp "}}</td>
+                        <td>
+                            <input type="number" ng-model="stock" class="form-control"
+                            value="{{cart.stock}}" min="1" style="width: 75px">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="updatedCart(cart, stock)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                Update
+                            </button>
+                            <button class="btn btn-danger">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
